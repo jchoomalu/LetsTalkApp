@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct LetsTalk: View {
     @State private var phoneIconScale: CGFloat = 1.0
@@ -34,11 +35,9 @@ struct LetsTalk: View {
                                 self.phoneIconScale = 1.0
                             }
                         }
-                        // Open the phone app
-                        if let url = URL(string: "tel:988"), UIApplication.shared.canOpenURL(url) {
-                            UIApplication.shared.open(url)
-                        }
+                        phoneCallButtonAction()
                     }
+
                 
                 HStack {
                     Rectangle().frame(height: 1).opacity(0.1)
@@ -56,8 +55,7 @@ struct LetsTalk: View {
                                 self.msgIconScale = 1.0
                             }
                         }
-                        // Open the messaging app
-                        if let url = URL(string: "sms:741741"), UIApplication.shared.canOpenURL(url) {
+                        if let url = URL(string: "sms:+1741741"), UIApplication.shared.canOpenURL(url) {
                             UIApplication.shared.open(url)
                         }
                     }
@@ -72,6 +70,16 @@ struct LetsTalk: View {
         .padding()
     }
 }
+
+private func phoneCallButtonAction() {
+    let phoneNumber: String = "988"
+    if let url = URL(string: "tel://" + phoneNumber) {
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+}
+
 
 #Preview {
     LetsTalk()

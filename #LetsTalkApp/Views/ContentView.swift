@@ -8,17 +8,19 @@
 import SwiftUI
 import RiveRuntime
 struct ContentView: View {
-    @AppStorage("selectedTab") var selectedTab: Tab = .chat
+    
+    @AppStorage("selectedTab") var selectedTab: SelectedMenu = .chat
     @State var isOpen = false
     @State var show = false
+    @State private var refreshToggle: Bool = false
     
     let button = RiveViewModel(fileName: "menu_button", stateMachineName: "State Machine", autoPlay: false)
     
     var body: some View {
         ZStack {
-        Color("")
+            Color(.clear)
                 .ignoresSafeArea()
-            SideMenu()
+            SideMenu(isOpen: $isOpen)
                 .padding(.top, 50)
                 .opacity(isOpen ? 1 : 0)
                 .offset(x: isOpen ? 0 : -300)
@@ -72,6 +74,11 @@ struct ContentView: View {
                         isOpen.toggle()
                     }
                 }
+                .onChange(of: isOpen) { _ in
+                            button.setInput("isOpen", value: isOpen)
+                            refreshToggle.toggle()
+                        }
+                        .id(refreshToggle)
         }
     }
 }
