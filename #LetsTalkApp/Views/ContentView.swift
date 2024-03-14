@@ -74,11 +74,11 @@ struct ContentView: View {
                         isOpen.toggle()
                     }
                 }
-                .onChange(of: isOpen) { _ in
-                            button.setInput("isOpen", value: isOpen)
-                            refreshToggle.toggle()
-                        }
-                        .id(refreshToggle)
+                .onChange(of: isOpen) {
+                    button.setInput("isOpen", value: isOpen)
+                    refreshToggle.toggle()
+                }
+                .id(refreshToggle)
         }
     }
 }
