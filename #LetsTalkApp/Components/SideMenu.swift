@@ -17,15 +17,12 @@ struct SideMenu: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                Image("afy2")
+                Image("arrowLogo")
                     .padding(12)
-                    .background(.white.opacity(0.8))
-                    .mask(Circle())
+                   
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Let's Talk")
-                    Text("YOU MATTER")
-                        .font(.subheadline)
-                        .opacity(1)
+                    Text("#Let'sTalk")
+                        .font(.custom("LilitaOne-Regular", size: 24))
                 }
                 Spacer()
             }

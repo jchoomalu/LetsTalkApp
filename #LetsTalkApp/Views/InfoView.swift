@@ -1,79 +1,82 @@
-//
-//  SignInView.swift
-//  #LetsTalkApp
-//
-//  Created by Jason Hoomalu on 3/8/24.
-//
-
 import SwiftUI
 import RiveRuntime
 
 struct InfoView: View {
     @State private var selectedInfo: Info?
     @State private var isPushed = false
+    
     var body: some View {
         ZStack {
-            // Assuming RiveViewModel(fileName: "shapes").view() sets a background
-            RiveViewModel(fileName: "shapes").view()
-                .ignoresSafeArea()
-                .blur(radius: 30)
-                .background(
-                    Image("Spline")
-                        .blur(radius: 50)
-                        .offset(x: 200, y: 200)
-                )
-            // Main content layout
+            background
+           
             VStack {
-                // Resources title
-                Text("Resources")
-                    .font(.largeTitle) // Use a larger font size for the title
-                    .fontWeight(.bold) // Make the title bold
-                    .foregroundColor(.white)
-                    .padding(.bottom, 50)
-
-                // Rectangles representing resources
+                Text("Information")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.blue)
+                    .padding(.top, 50)
+                
                 ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: 20) { // Increase spacing for a cleaner look
+                    VStack(spacing: 20) {
                         ForEach(infos) { info in
-                            ZStack {
-                                Rectangle()
-                                    .fill(info.color)
-                                    .frame(width: 300, height: 100) // Adjust size as needed
-                                    .cornerRadius(15) // Rounded corners
-                                    .scaleEffect(self.isPushed ? 0.95 : 1.0)
-                                    .onTapGesture {
-                                        withAnimation {
-                                            self.isPushed.toggle()
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                                self.selectedInfo = info
-                                                self.isPushed.toggle()
-                                            }
-                                        }
-                                    }
-                                    Text(info.title)
-                                    .foregroundColor(.white)
-                                    .fontWeight(.medium) // Optionally adjust font weight
-                            }
-                            .onTapGesture {
-                                self.selectedInfo = info
-                            }
+                            InfoCardView(info: info, isPushed: $isPushed, selectedInfo: $selectedInfo)
                         }
                     }
                     .padding()
                 }
                 Spacer()
-                Spacer()
             }
             .padding()
-            .sheet(item: $selectedInfo) { info in
-                ModalView(info: info)
-            }
-        }.ignoresSafeArea()
+            .sheet(item: $selectedInfo, content: ModalView.init)
+        }
+        .ignoresSafeArea()
     }
+    
+    var background: some View {
+        RiveViewModel(fileName: "shapesGreen").view()
+            .ignoresSafeArea()
+            .blur(radius: 50)
+    }
+}
 
+struct InfoCardView: View {
+    let info: Info
+    @Binding var isPushed: Bool
+    @Binding var selectedInfo: Info?
+    
+    var body: some View {
+        Button(action: {
+              self.selectedInfo = self.info
+          }) {
+              ZStack {
+                  info.image
+                      .resizable()
+                      .scaledToFill()
+                      .frame(width: 300, height: 110)
+                      .clipped()
+                      .overlay(
+                          RoundedRectangle(cornerRadius: 15)
+                              .fill(LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.2), Color.black.opacity(0.2)]), startPoint: .top, endPoint: .bottom))
+                      )
+
+                  Text(info.title)
+                      .foregroundColor(.white)
+                      .font(.title2)
+                      .fontWeight(.bold)
+                      .shadow(color: .black.opacity(0.75), radius: 2, x: 1, y: 1)
+                      .padding(.bottom, 5)
+              }
+          }
+          .frame(width: 300, height: 110)
+          .cornerRadius(15)
+          .shadow(color: .gray, radius: 10, x: 0, y: 4)
+      }
+  }
+
+    
     struct ModalView: View {
         let info: Info
-
+        
         var body: some View {
             ZStack {
                 RiveViewModel(fileName: "shapes").view()
@@ -84,27 +87,41 @@ struct InfoView: View {
                             .blur(radius: 50)
                             .offset(x: -65, y: -85)
                     )
+                
                 VStack {
                     Text(info.title)
                         .font(.largeTitle)
                         .bold()
                         .padding(10)
-
+                    
                     Text(info.caption)
-                        .font(.title3) 
+                        .font(.title3)
                         .padding(.horizontal)
-
+                    
                     info.image
                         .resizable()
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .cornerRadius(20)
-                                .padding(.bottom, -38)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .cornerRadius(20)
+                        .padding(.bottom, -38)
                 }
             }
         }
     }
 
+struct ResourceInfo: Identifiable, Equatable {
+    var id = UUID()
+    var title: String
+    var caption: String
+    var color: Color
+    var image: Image
+
+    static func == (lhs: ResourceInfo, rhs: ResourceInfo) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
+
+
+
 
 // Preview struct
 #Preview {

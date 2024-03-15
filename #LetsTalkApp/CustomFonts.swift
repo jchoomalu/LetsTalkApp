@@ -12,12 +12,14 @@ struct CustomFont: ViewModifier {
     
     var name: String {
         switch textStyle {
-        case .largeTitle, .title, .title2, .title3:
+        case .largeTitle, .title, .title2:
             return "Poppins Bold"
         case .body, .subheadline, .footnote, .caption:
             return "Inter Regular"
         case .headline, .subheadline2, .footnote2, .caption2:
             return "Inter SemiBold"
+        case .title3:
+            return "LilitaOne Regular"
         }
     }
     

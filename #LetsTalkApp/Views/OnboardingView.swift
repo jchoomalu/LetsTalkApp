@@ -45,10 +45,13 @@ struct OnboardingView: View {
     
     var content: some View {
         VStack(alignment: .leading, spacing: 16) {
-            
-            Text("YOU matter. Let's TALK.")
-                .font(.custom("Poppins Bold", size: 52, relativeTo: .largeTitle))
-                .frame(width: 260, alignment: .leading)
+            Image("hope2")
+                .resizable()
+                            .scaledToFit()
+                            .position(x: UIScreen.main.bounds.width / 2, y: 40)
+                            .frame(width: UIScreen.main.bounds.width, alignment: .leading)
+                            .zIndex(1)
+                            
             Text("You are not alone. Find someone to call or text not. You have options, give us a chance.")
                 .customFont(.title)
                 .opacity(0.7)
@@ -58,7 +61,7 @@ struct OnboardingView: View {
                 .overlay(
                     Label("Let's Talk", systemImage: "bubble.left.and.bubble.right")
                         .offset(x:4, y:4)
-                        .font(.headline)
+                        .font(.custom("LilitaOne-Regular", size: 24))
                 )
                 .background(
                     Color.black
@@ -74,7 +77,7 @@ struct OnboardingView: View {
                             showModal = true
                         }
                     }
-                }
+                }.padding()
          Spacer()
         Spacer()
         }
@@ -83,14 +86,9 @@ struct OnboardingView: View {
     }
     
     var background: some View {
-        RiveViewModel(fileName: "shapes").view()
+        RiveViewModel(fileName: "shapesGreen").view()
             .ignoresSafeArea()
-            .blur(radius: 30)
-            .background(
-                Image("Spline")
-                    .blur(radius: 50)
-                    .offset(x: 200, y: 200)
-            )
+            .blur(radius: 50)
     }
     
 }

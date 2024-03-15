@@ -7,7 +7,9 @@
 
 import SwiftUI
 import WebKit
+import AVKit
 import RiveRuntime
+
 struct HomeView: View {
     @State private var selectedCourse: Course?
     
@@ -50,7 +52,7 @@ struct HomeView: View {
                     .padding(.bottom, 10)
                 }
                 VStack {
-                    Text("Recent")
+                    Text("Articles")
                         .customFont(.title3)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
@@ -81,7 +83,7 @@ struct HomeView: View {
                 .cornerRadius(10)
         }
     }
-    
+
     struct WebView: UIViewRepresentable {
         let url: URL
         

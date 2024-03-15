@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4122EAE22BA33CC600008903 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4122EAE12BA33CC600008903 /* Info.swift */; };
+		4122EAE42BA33CFD00008903 /* CourseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4122EAE32BA33CFD00008903 /* CourseSection.swift */; };
+		4122EAE62BA33DB000008903 /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4122EAE52BA33DB000008903 /* Courses.swift */; };
+		41407A132BA371FA005FEFD1 /* shapesGreen.riv in Resources */ = {isa = PBXBuildFile; fileRef = 41407A122BA371FA005FEFD1 /* shapesGreen.riv */; };
 		41E531152B9A82A400E3CA01 /* _LetsTalkAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531142B9A82A400E3CA01 /* _LetsTalkAppApp.swift */; };
 		41E531172B9A82A400E3CA01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531162B9A82A400E3CA01 /* ContentView.swift */; };
 		41E531192B9A82A600E3CA01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41E531182B9A82A600E3CA01 /* Assets.xcassets */; };
@@ -27,16 +31,18 @@
 		41E531412B9B3AB900E3CA01 /* LetsTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531402B9B3AB900E3CA01 /* LetsTalk.swift */; };
 		41E531432B9B4F5D00E3CA01 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531422B9B4F5D00E3CA01 /* TabBar.swift */; };
 		41E531532B9C9D0600E3CA01 /* VCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531522B9C9D0600E3CA01 /* VCard.swift */; };
-		41E531572B9C9DB800E3CA01 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531542B9C9DB800E3CA01 /* Course.swift */; };
-		41E531582B9C9DB800E3CA01 /* CourseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531552B9C9DB800E3CA01 /* CourseSection.swift */; };
 		41E5315A2B9C9F3C00E3CA01 /* HCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531592B9C9F3C00E3CA01 /* HCard.swift */; };
 		41E5315C2B9CA0A300E3CA01 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5315B2B9CA0A300E3CA01 /* HomeView.swift */; };
 		41E5315E2B9CA9AD00E3CA01 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5315D2B9CA9AD00E3CA01 /* SideMenu.swift */; };
 		41E531622B9DDF4B00E3CA01 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531612B9DDF4B00E3CA01 /* InfoView.swift */; };
-		41E531662B9DE3E800E3CA01 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531652B9DE3E800E3CA01 /* Info.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4122EAE12BA33CC600008903 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		4122EAE32BA33CFD00008903 /* CourseSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSection.swift; sourceTree = "<group>"; };
+		4122EAE52BA33DB000008903 /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
+		41407A092BA35D65005FEFD1 /* LilitaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LilitaOne-Regular.ttf"; sourceTree = "<group>"; };
+		41407A122BA371FA005FEFD1 /* shapesGreen.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = shapesGreen.riv; sourceTree = "<group>"; };
 		41E531112B9A82A400E3CA01 /* #LetsTalkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "#LetsTalkApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41E531142B9A82A400E3CA01 /* _LetsTalkAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _LetsTalkAppApp.swift; sourceTree = "<group>"; };
 		41E531162B9A82A400E3CA01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,13 +64,10 @@
 		41E531402B9B3AB900E3CA01 /* LetsTalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsTalk.swift; sourceTree = "<group>"; };
 		41E531422B9B4F5D00E3CA01 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		41E531522B9C9D0600E3CA01 /* VCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCard.swift; sourceTree = "<group>"; };
-		41E531542B9C9DB800E3CA01 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
-		41E531552B9C9DB800E3CA01 /* CourseSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSection.swift; sourceTree = "<group>"; };
 		41E531592B9C9F3C00E3CA01 /* HCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCard.swift; sourceTree = "<group>"; };
 		41E5315B2B9CA0A300E3CA01 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		41E5315D2B9CA9AD00E3CA01 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		41E531612B9DDF4B00E3CA01 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		41E531652B9DE3E800E3CA01 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41E4682F2BA33BC10076CF35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4122EAE12BA33CC600008903 /* Info.swift */,
+				4122EAE32BA33CFD00008903 /* CourseSection.swift */,
+				4122EAE52BA33DB000008903 /* Courses.swift */,
+			);
+			name = Model;
+			path = Fonts/Model;
+			sourceTree = "<group>";
+		};
 		41E531082B9A82A400E3CA01 = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +115,7 @@
 				41E5313D2B9B280E00E3CA01 /* -LetsTalkApp-Info.plist */,
 				41E531142B9A82A400E3CA01 /* _LetsTalkAppApp.swift */,
 				41E5313E2B9B2BEE00E3CA01 /* CustomFonts.swift */,
-				41E531562B9C9DB800E3CA01 /* Model */,
+				41E4682F2BA33BC10076CF35 /* Model */,
 				41E531392B9B279900E3CA01 /* Fonts */,
 				41E5311A2B9A82A600E3CA01 /* Preview Content */,
 				41E531292B9A834200E3CA01 /* RiveAssets */,
@@ -126,6 +140,7 @@
 				41E531222B9A834200E3CA01 /* button.riv */,
 				41E531232B9A834200E3CA01 /* check.riv */,
 				41E531242B9A834200E3CA01 /* confetti.riv */,
+				41407A122BA371FA005FEFD1 /* shapesGreen.riv */,
 				41E531252B9A834200E3CA01 /* house.riv */,
 				41E531262B9A834200E3CA01 /* icons.riv */,
 				41E531272B9A834200E3CA01 /* menu_button.riv */,
@@ -138,21 +153,11 @@
 			isa = PBXGroup;
 			children = (
 				41E531362B9B279900E3CA01 /* Inter-Regular.ttf */,
+				41407A092BA35D65005FEFD1 /* LilitaOne-Regular.ttf */,
 				41E531372B9B279900E3CA01 /* Inter-SemiBold.ttf */,
 				41E531382B9B279900E3CA01 /* Poppins-Bold.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		41E531562B9C9DB800E3CA01 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				41E531542B9C9DB800E3CA01 /* Course.swift */,
-				41E531552B9C9DB800E3CA01 /* CourseSection.swift */,
-				41E531652B9DE3E800E3CA01 /* Info.swift */,
-			);
-			name = Model;
-			path = "../../../Downloads/SwiftUI Animations/Xcode Final/AnimatedApp/Model";
 			sourceTree = "<group>";
 		};
 		41E5315F2B9CBDF300E3CA01 /* Components */ = {
@@ -246,6 +251,7 @@
 				41E5311C2B9A82A600E3CA01 /* Preview Assets.xcassets in Resources */,
 				41E5312E2B9A834200E3CA01 /* icons.riv in Resources */,
 				41E5313B2B9B279900E3CA01 /* Inter-SemiBold.ttf in Resources */,
+				41407A132BA371FA005FEFD1 /* shapesGreen.riv in Resources */,
 				41E5312B2B9A834200E3CA01 /* check.riv in Resources */,
 				41E531302B9A834200E3CA01 /* shapes.riv in Resources */,
 				41E531192B9A82A600E3CA01 /* Assets.xcassets in Resources */,
@@ -265,8 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				41E5315A2B9C9F3C00E3CA01 /* HCard.swift in Sources */,
-				41E531572B9C9DB800E3CA01 /* Course.swift in Sources */,
 				41E531352B9A85DB00E3CA01 /* OnboardingView.swift in Sources */,
+				4122EAE62BA33DB000008903 /* Courses.swift in Sources */,
+				4122EAE42BA33CFD00008903 /* CourseSection.swift in Sources */,
 				41E5315E2B9CA9AD00E3CA01 /* SideMenu.swift in Sources */,
 				41E5313F2B9B2BEE00E3CA01 /* CustomFonts.swift in Sources */,
 				41E531622B9DDF4B00E3CA01 /* InfoView.swift in Sources */,
@@ -274,10 +281,9 @@
 				41E5315C2B9CA0A300E3CA01 /* HomeView.swift in Sources */,
 				41E531532B9C9D0600E3CA01 /* VCard.swift in Sources */,
 				41E531432B9B4F5D00E3CA01 /* TabBar.swift in Sources */,
+				4122EAE22BA33CC600008903 /* Info.swift in Sources */,
 				41E531152B9A82A400E3CA01 /* _LetsTalkAppApp.swift in Sources */,
-				41E531582B9C9DB800E3CA01 /* CourseSection.swift in Sources */,
 				41E531412B9B3AB900E3CA01 /* LetsTalk.swift in Sources */,
-				41E531662B9DE3E800E3CA01 /* Info.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,8 +424,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,8 +453,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
