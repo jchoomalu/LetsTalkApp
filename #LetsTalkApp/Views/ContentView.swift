@@ -35,7 +35,7 @@ struct ContentView: View {
                 case .timer:
                     InfoView()
                 case .user:
-                    Text("Hope")
+                    HopeView()
                 }
             }
             .safeAreaInset(edge: .bottom) {

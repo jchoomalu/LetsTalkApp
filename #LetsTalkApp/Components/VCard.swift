@@ -62,6 +62,4 @@ struct VCard: View {
     }
 }
 
-#Preview {
-    VCard(course: courses[0])
-}
+

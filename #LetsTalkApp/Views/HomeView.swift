@@ -24,49 +24,46 @@ struct HomeView: View {
             }
         }
     }
-        
-        var content: some View {
+    
+    var content: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Spacer()
             VStack(alignment: .leading, spacing: 0) {
-                Spacer()
-                VStack(alignment: .leading, spacing: 0) {
-                    Text("Videos")
-                        .font(.largeTitle)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
-                .padding(.horizontal, 20)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        ForEach(viewModel.courses) { course in
-                            VCard(course: course)
-                                .onTapGesture {
-                                    self.selectedCourse = course // Set the selected course when tapped
-                                }
-                        }
-                    }
-                    .padding(20)
-                    .padding(.bottom, 10)
-                }
-                VStack {
-                    Text("Articles")
-                        .customFont(.title3)
+                Text("Videos")
+                    .font(.largeTitle)
                     .frame(maxWidth: .infinity, alignment: .leading)
-
-                    VStack(spacing: 20) {
-                        ForEach(courseSections) { section in
-                            HCard(section: section)
-                        }
+                    .padding(.top, 20)
+            }
+            .padding(20)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
+                    ForEach(viewModel.courses) { course in
+                        VCard(course: course)
+                            .onTapGesture {
+                                self.selectedCourse = course // Set the selected course when tapped
+                            }
                     }
                 }
                 .padding(20)
+                .padding(.bottom, 10)
             }
-            .fullScreenCover(item: $selectedCourse) { course in
-                VideoPlayerView(videoURLString: course.videoURL)
+            VStack {
+                Text("Articles")
+                    .customFont(.title3)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                VStack(spacing: 20) {
+                    ForEach(courseSections) { section in
+                        HCard(section: section)
+                    }
+                }
             }
-            
+            .padding(20)
         }
-    
+        .fullScreenCover(item: $selectedCourse) { course in
+            VideoPlayerView(videoURLString: course.videoURL)
+        }
     }
+}
     
     struct vCard: View {
         var course: Course
@@ -114,8 +111,6 @@ struct HomeView: View {
     }
 
         
-
-
 
 #Preview {
     HomeView()

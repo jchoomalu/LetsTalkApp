@@ -7,14 +7,13 @@
 
 import SwiftUI
 import Firebase
+import UIKit
 
 @main
 struct _LetsTalkAppApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     init() {
         FirebaseApp.configure()
-        // seeds
-        saveInfosToFirestore()
-        saveCoursesToFirestore()
     }
     var body: some Scene {
         WindowGroup {
