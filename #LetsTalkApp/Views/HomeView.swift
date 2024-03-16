@@ -12,17 +12,13 @@ import RiveRuntime
 
 struct HomeView: View {
     @State private var selectedCourse: Course?
+    @ObservedObject var viewModel = FirestoreCourseModel()
     
     var body: some View {
         ZStack {
-            RiveViewModel(fileName: "shapes")
+            RiveViewModel(fileName: "shapesGreen")
                 .view()
                 .blur(radius: 30)
-                .background(
-                    Image("Spline")
-                        .blur(radius: 50)
-                        .offset(x: 200, y: 200)
-                )
             ScrollView {
                 content
             }
@@ -41,7 +37,7 @@ struct HomeView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
-                        ForEach(courses) { course in
+                        ForEach(viewModel.courses) { course in
                             VCard(course: course)
                                 .onTapGesture {
                                     self.selectedCourse = course // Set the selected course when tapped

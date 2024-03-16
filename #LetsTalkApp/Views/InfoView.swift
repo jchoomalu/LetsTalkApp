@@ -2,42 +2,42 @@ import SwiftUI
 import RiveRuntime
 
 struct InfoView: View {
-    @State private var selectedInfo: Info?
-    @State private var isPushed = false
-    
+        @ObservedObject var viewModel = FirestoreInfoModel()
+        @State private var selectedInfo: Info?
+        @State private var isPushed = false
     var body: some View {
-        ZStack {
-            background
-           
-            VStack {
-                Text("Information")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.blue)
-                    .padding(.top, 50)
-                
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: 20) {
-                        ForEach(infos) { info in
-                            InfoCardView(info: info, isPushed: $isPushed, selectedInfo: $selectedInfo)
-                        }
-                    }
-                    .padding()
-                }
-                Spacer()
-            }
-            .padding()
-            .sheet(item: $selectedInfo, content: ModalView.init)
-        }
-        .ignoresSafeArea()
-    }
-    
-    var background: some View {
-        RiveViewModel(fileName: "shapesGreen").view()
-            .ignoresSafeArea()
-            .blur(radius: 50)
-    }
-}
+         ZStack {
+             background
+            
+             VStack {
+                 Text("Information")
+                     .font(.largeTitle)
+                     .fontWeight(.bold)
+                     .foregroundColor(.blue)
+                     .padding(.top, 50)
+                 
+                 ScrollView(.vertical, showsIndicators: false) {
+                     VStack(spacing: 20) {
+                         ForEach(viewModel.infos) { info in
+                             InfoCardView(info: info, isPushed: $isPushed, selectedInfo: $selectedInfo)
+                         }
+                     }
+                     .padding()
+                 }
+                 Spacer()
+             }
+             .padding()
+             .sheet(item: $selectedInfo, content: ModalView.init)
+         }
+         .ignoresSafeArea()
+     }
+     
+     var background: some View {
+         RiveViewModel(fileName: "shapesGreen").view()
+             .ignoresSafeArea()
+             .blur(radius: 50)
+     }
+ }
 
 struct InfoCardView: View {
     let info: Info
@@ -49,7 +49,7 @@ struct InfoCardView: View {
               self.selectedInfo = self.info
           }) {
               ZStack {
-                  info.image
+                  Image(info.image)
                       .resizable()
                       .scaledToFill()
                       .frame(width: 300, height: 110)
@@ -97,8 +97,7 @@ struct InfoCardView: View {
                     Text(info.caption)
                         .font(.title3)
                         .padding(.horizontal)
-                    
-                    info.image
+                    Image(info.image)
                         .resizable()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .cornerRadius(20)

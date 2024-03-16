@@ -6,9 +6,16 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct _LetsTalkAppApp: App {
+    init() {
+        FirebaseApp.configure()
+        // seeds
+        saveInfosToFirestore()
+        saveCoursesToFirestore()
+    }
     var body: some Scene {
         WindowGroup {
             ContentView()

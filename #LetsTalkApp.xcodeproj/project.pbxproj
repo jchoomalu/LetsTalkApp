@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4122EAE22BA33CC600008903 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4122EAE12BA33CC600008903 /* Info.swift */; };
 		4122EAE42BA33CFD00008903 /* CourseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4122EAE32BA33CFD00008903 /* CourseSection.swift */; };
 		4122EAE62BA33DB000008903 /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4122EAE52BA33DB000008903 /* Courses.swift */; };
 		41407A132BA371FA005FEFD1 /* shapesGreen.riv in Resources */ = {isa = PBXBuildFile; fileRef = 41407A122BA371FA005FEFD1 /* shapesGreen.riv */; };
+		41407A202BA458E6005FEFD1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 41407A1F2BA458E6005FEFD1 /* FirebaseAuth */; };
+		41407A222BA458E6005FEFD1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 41407A212BA458E6005FEFD1 /* FirebaseFirestore */; };
+		41407A242BA458E6005FEFD1 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41407A232BA458E6005FEFD1 /* FirebaseFirestoreSwift */; };
+		41407A262BA458E6005FEFD1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 41407A252BA458E6005FEFD1 /* FirebaseStorage */; };
+		41407A282BA45E0A005FEFD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41407A272BA45E0A005FEFD1 /* GoogleService-Info.plist */; };
+		41407A2A2BA46175005FEFD1 /* DBInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41407A292BA46175005FEFD1 /* DBInfo.swift */; };
+		41407A2C2BA4641B005FEFD1 /* DBseed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41407A2B2BA4641B005FEFD1 /* DBseed.swift */; };
 		41E531152B9A82A400E3CA01 /* _LetsTalkAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531142B9A82A400E3CA01 /* _LetsTalkAppApp.swift */; };
 		41E531172B9A82A400E3CA01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531162B9A82A400E3CA01 /* ContentView.swift */; };
 		41E531192B9A82A600E3CA01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41E531182B9A82A600E3CA01 /* Assets.xcassets */; };
@@ -38,11 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4122EAE12BA33CC600008903 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		4122EAE32BA33CFD00008903 /* CourseSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSection.swift; sourceTree = "<group>"; };
 		4122EAE52BA33DB000008903 /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
 		41407A092BA35D65005FEFD1 /* LilitaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LilitaOne-Regular.ttf"; sourceTree = "<group>"; };
 		41407A122BA371FA005FEFD1 /* shapesGreen.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = shapesGreen.riv; sourceTree = "<group>"; };
+		41407A272BA45E0A005FEFD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		41407A292BA46175005FEFD1 /* DBInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBInfo.swift; sourceTree = "<group>"; };
+		41407A2B2BA4641B005FEFD1 /* DBseed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBseed.swift; sourceTree = "<group>"; };
 		41E531112B9A82A400E3CA01 /* #LetsTalkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "#LetsTalkApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41E531142B9A82A400E3CA01 /* _LetsTalkAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _LetsTalkAppApp.swift; sourceTree = "<group>"; };
 		41E531162B9A82A400E3CA01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +84,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				41E531332B9A84EF00E3CA01 /* RiveRuntime in Frameworks */,
+				41407A202BA458E6005FEFD1 /* FirebaseAuth in Frameworks */,
+				41407A222BA458E6005FEFD1 /* FirebaseFirestore in Frameworks */,
+				41407A262BA458E6005FEFD1 /* FirebaseStorage in Frameworks */,
+				41407A242BA458E6005FEFD1 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,9 +97,10 @@
 		41E4682F2BA33BC10076CF35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4122EAE12BA33CC600008903 /* Info.swift */,
 				4122EAE32BA33CFD00008903 /* CourseSection.swift */,
 				4122EAE52BA33DB000008903 /* Courses.swift */,
+				41407A292BA46175005FEFD1 /* DBInfo.swift */,
+				41407A2B2BA4641B005FEFD1 /* DBseed.swift */,
 			);
 			name = Model;
 			path = Fonts/Model;
@@ -113,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				41E5313D2B9B280E00E3CA01 /* -LetsTalkApp-Info.plist */,
+				41407A272BA45E0A005FEFD1 /* GoogleService-Info.plist */,
 				41E531142B9A82A400E3CA01 /* _LetsTalkAppApp.swift */,
 				41E5313E2B9B2BEE00E3CA01 /* CustomFonts.swift */,
 				41E4682F2BA33BC10076CF35 /* Model */,
@@ -201,6 +215,10 @@
 			name = "#LetsTalkApp";
 			packageProductDependencies = (
 				41E531322B9A84EF00E3CA01 /* RiveRuntime */,
+				41407A1F2BA458E6005FEFD1 /* FirebaseAuth */,
+				41407A212BA458E6005FEFD1 /* FirebaseFirestore */,
+				41407A232BA458E6005FEFD1 /* FirebaseFirestoreSwift */,
+				41407A252BA458E6005FEFD1 /* FirebaseStorage */,
 			);
 			productName = "#LetsTalkApp";
 			productReference = 41E531112B9A82A400E3CA01 /* #LetsTalkApp.app */;
@@ -232,6 +250,7 @@
 			mainGroup = 41E531082B9A82A400E3CA01;
 			packageReferences = (
 				41E531312B9A84EF00E3CA01 /* XCRemoteSwiftPackageReference "rive-ios" */,
+				41407A1E2BA458E6005FEFD1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 41E531122B9A82A400E3CA01 /* Products */;
 			projectDirPath = "";
@@ -260,6 +279,7 @@
 				41E5312D2B9A834200E3CA01 /* house.riv in Resources */,
 				41E5312F2B9A834200E3CA01 /* menu_button.riv in Resources */,
 				41E5312C2B9A834200E3CA01 /* confetti.riv in Resources */,
+				41407A282BA45E0A005FEFD1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,10 +290,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41407A2A2BA46175005FEFD1 /* DBInfo.swift in Sources */,
 				41E5315A2B9C9F3C00E3CA01 /* HCard.swift in Sources */,
 				41E531352B9A85DB00E3CA01 /* OnboardingView.swift in Sources */,
 				4122EAE62BA33DB000008903 /* Courses.swift in Sources */,
 				4122EAE42BA33CFD00008903 /* CourseSection.swift in Sources */,
+				41407A2C2BA4641B005FEFD1 /* DBseed.swift in Sources */,
 				41E5315E2B9CA9AD00E3CA01 /* SideMenu.swift in Sources */,
 				41E5313F2B9B2BEE00E3CA01 /* CustomFonts.swift in Sources */,
 				41E531622B9DDF4B00E3CA01 /* InfoView.swift in Sources */,
@@ -281,7 +303,6 @@
 				41E5315C2B9CA0A300E3CA01 /* HomeView.swift in Sources */,
 				41E531532B9C9D0600E3CA01 /* VCard.swift in Sources */,
 				41E531432B9B4F5D00E3CA01 /* TabBar.swift in Sources */,
-				4122EAE22BA33CC600008903 /* Info.swift in Sources */,
 				41E531152B9A82A400E3CA01 /* _LetsTalkAppApp.swift in Sources */,
 				41E531412B9B3AB900E3CA01 /* LetsTalk.swift in Sources */,
 			);
@@ -417,10 +438,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"#LetsTalkApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 4SH6KTD8K5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "-LetsTalkApp-Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_CFBundleDisplayName = "#LetsTalk";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -429,7 +452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kultivatedevelopers.-LetsTalkApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -446,10 +469,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"#LetsTalkApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 4SH6KTD8K5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "-LetsTalkApp-Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_CFBundleDisplayName = "#LetsTalk";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -458,7 +483,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kultivatedevelopers.-LetsTalkApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -491,6 +516,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		41407A1E2BA458E6005FEFD1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.22.1;
+			};
+		};
 		41E531312B9A84EF00E3CA01 /* XCRemoteSwiftPackageReference "rive-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rive-app/rive-ios";
@@ -502,6 +535,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		41407A1F2BA458E6005FEFD1 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41407A1E2BA458E6005FEFD1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		41407A212BA458E6005FEFD1 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41407A1E2BA458E6005FEFD1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		41407A232BA458E6005FEFD1 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41407A1E2BA458E6005FEFD1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		41407A252BA458E6005FEFD1 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41407A1E2BA458E6005FEFD1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		41E531322B9A84EF00E3CA01 /* RiveRuntime */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 41E531312B9A84EF00E3CA01 /* XCRemoteSwiftPackageReference "rive-ios" */;
