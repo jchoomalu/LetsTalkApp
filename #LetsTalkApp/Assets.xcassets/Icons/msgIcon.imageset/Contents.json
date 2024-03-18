@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "msgIcon.png",
+      "filename" : "msgIcon.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },

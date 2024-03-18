@@ -52,7 +52,7 @@ struct OnboardingView: View {
                             .frame(width: UIScreen.main.bounds.width, alignment: .leading)
                             .zIndex(1)
                             
-            Text("You are not alone. Find someone to call or text not. You have options, give us a chance.")
+            Text("You are not alone. Find someone to call or text now. You have options, give us a chance.")
                 .customFont(.title)
                 .opacity(0.7)
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)

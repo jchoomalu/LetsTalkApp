@@ -1,4 +1,3 @@
-
 //
 //  DBseed.swift
 //  #LetsTalkApp
@@ -19,6 +18,7 @@ struct Info: Codable, Identifiable {
     var image: String // Store image as a string
 }
 
+// Videos section in courses
 struct Course: Codable, Identifiable {
     @DocumentID var id: String? // Use @DocumentID for the document ID
     var title: String
@@ -29,12 +29,25 @@ struct Course: Codable, Identifiable {
     var videoURL: String
 }
 
+struct Article: Codable, Identifiable {
+    @DocumentID var id: String?
+    var title: String
+    var caption: String
+    var color: String
+    var image: String
+    var articleURL: String
+}
+
+
+
 struct Submission: Codable, Identifiable {
     @DocumentID var id: String?
     var text: String
     var approved: Bool
     let avatarName: String
-    let dateSaved: Date}
+    let timestamp: Date
+    let nickname: String
+}
 
 
 
@@ -80,6 +93,45 @@ class FirestoreCourseModel: ObservableObject {
             } ?? []
         }
     }
+}
+
+class FirestoreArticleModel: ObservableObject {
+    @Published var articles: [Article] = []
+
+    private var db = Firestore.firestore()
+
+    init() {
+        fetchData()
+    }
+
+    func fetchData() {
+        db.collection("articles").getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting articles: \(error.localizedDescription)")
+                return
+            }
+
+            guard let documents = querySnapshot?.documents else {
+                print("No articles found")
+                return
+            }
+
+            print("Fetched \(documents.count) articles")
+            self.articles = documents.compactMap { document -> Article? in
+                do {
+                    return try document.data(as: Article.self)
+                } catch {
+                    print("Error decoding article: \(error)")
+                    return nil
+                }
+            }
+            if self.articles.isEmpty {
+                print("No articles could be decoded, or articles are empty")
+            }
+        }
+    }
+
+
 }
 
 class FirestoreSubmissionsModel: ObservableObject {

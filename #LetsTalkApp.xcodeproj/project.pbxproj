@@ -15,11 +15,10 @@
 		41407A242BA458E6005FEFD1 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41407A232BA458E6005FEFD1 /* FirebaseFirestoreSwift */; };
 		41407A262BA458E6005FEFD1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 41407A252BA458E6005FEFD1 /* FirebaseStorage */; };
 		41407A282BA45E0A005FEFD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41407A272BA45E0A005FEFD1 /* GoogleService-Info.plist */; };
-		41407A2A2BA46175005FEFD1 /* DBInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41407A292BA46175005FEFD1 /* DBInfo.swift */; };
 		41407A2C2BA4641B005FEFD1 /* DBseed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41407A2B2BA4641B005FEFD1 /* DBseed.swift */; };
 		417B6D2B2BA5DED900C91E37 /* HopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B6D2A2BA5DED900C91E37 /* HopeView.swift */; };
 		417B6D2E2BA5E6E700C91E37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B6D2D2BA5E6E700C91E37 /* AppDelegate.swift */; };
-		41E531152B9A82A400E3CA01 /* _LetsTalkAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531142B9A82A400E3CA01 /* _LetsTalkAppApp.swift */; };
+		41E531152B9A82A400E3CA01 /* _LetsTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531142B9A82A400E3CA01 /* _LetsTalkApp.swift */; };
 		41E531172B9A82A400E3CA01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E531162B9A82A400E3CA01 /* ContentView.swift */; };
 		41E531192B9A82A600E3CA01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41E531182B9A82A600E3CA01 /* Assets.xcassets */; };
 		41E5311C2B9A82A600E3CA01 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41E5311B2B9A82A600E3CA01 /* Preview Assets.xcassets */; };
@@ -51,12 +50,11 @@
 		41407A092BA35D65005FEFD1 /* LilitaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LilitaOne-Regular.ttf"; sourceTree = "<group>"; };
 		41407A122BA371FA005FEFD1 /* shapesGreen.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = shapesGreen.riv; sourceTree = "<group>"; };
 		41407A272BA45E0A005FEFD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		41407A292BA46175005FEFD1 /* DBInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBInfo.swift; sourceTree = "<group>"; };
 		41407A2B2BA4641B005FEFD1 /* DBseed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBseed.swift; sourceTree = "<group>"; };
 		417B6D2A2BA5DED900C91E37 /* HopeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopeView.swift; sourceTree = "<group>"; };
 		417B6D2D2BA5E6E700C91E37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41E531112B9A82A400E3CA01 /* #LetsTalkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "#LetsTalkApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		41E531142B9A82A400E3CA01 /* _LetsTalkAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _LetsTalkAppApp.swift; sourceTree = "<group>"; };
+		41E531142B9A82A400E3CA01 /* _LetsTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _LetsTalkApp.swift; sourceTree = "<group>"; };
 		41E531162B9A82A400E3CA01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		41E531182B9A82A600E3CA01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41E5311B2B9A82A600E3CA01 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -98,20 +96,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		417B6D2C2BA5E6CE00C91E37 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				417B6D2D2BA5E6E700C91E37 /* AppDelegate.swift */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
 		41E4682F2BA33BC10076CF35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				4122EAE32BA33CFD00008903 /* CourseSection.swift */,
 				4122EAE52BA33DB000008903 /* Courses.swift */,
-				41407A292BA46175005FEFD1 /* DBInfo.swift */,
 				41407A2B2BA4641B005FEFD1 /* DBseed.swift */,
 			);
 			name = Model;
@@ -137,10 +126,10 @@
 		41E531132B9A82A400E3CA01 /* #LetsTalkApp */ = {
 			isa = PBXGroup;
 			children = (
-				417B6D2C2BA5E6CE00C91E37 /* Config */,
+				417B6D2D2BA5E6E700C91E37 /* AppDelegate.swift */,
 				41E5313D2B9B280E00E3CA01 /* -LetsTalkApp-Info.plist */,
 				41407A272BA45E0A005FEFD1 /* GoogleService-Info.plist */,
-				41E531142B9A82A400E3CA01 /* _LetsTalkAppApp.swift */,
+				41E531142B9A82A400E3CA01 /* _LetsTalkApp.swift */,
 				41E5313E2B9B2BEE00E3CA01 /* CustomFonts.swift */,
 				41E4682F2BA33BC10076CF35 /* Model */,
 				41E531392B9B279900E3CA01 /* Fonts */,
@@ -304,7 +293,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41407A2A2BA46175005FEFD1 /* DBInfo.swift in Sources */,
 				417B6D2B2BA5DED900C91E37 /* HopeView.swift in Sources */,
 				41E5315A2B9C9F3C00E3CA01 /* HCard.swift in Sources */,
 				41E531352B9A85DB00E3CA01 /* OnboardingView.swift in Sources */,
@@ -318,7 +306,7 @@
 				41E5315C2B9CA0A300E3CA01 /* HomeView.swift in Sources */,
 				41E531532B9C9D0600E3CA01 /* VCard.swift in Sources */,
 				41E531432B9B4F5D00E3CA01 /* TabBar.swift in Sources */,
-				41E531152B9A82A400E3CA01 /* _LetsTalkAppApp.swift in Sources */,
+				41E531152B9A82A400E3CA01 /* _LetsTalkApp.swift in Sources */,
 				417B6D2E2BA5E6E700C91E37 /* AppDelegate.swift in Sources */,
 				41E531412B9B3AB900E3CA01 /* LetsTalk.swift in Sources */,
 			);

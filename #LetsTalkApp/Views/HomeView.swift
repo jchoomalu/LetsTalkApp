@@ -12,8 +12,9 @@ import RiveRuntime
 
 struct HomeView: View {
     @State private var selectedCourse: Course?
-    @ObservedObject var viewModel = FirestoreCourseModel()
-    
+    @ObservedObject var courseViewModel = FirestoreCourseModel()
+    @ObservedObject var articleViewModel = FirestoreArticleModel()
+
     var body: some View {
         ZStack {
             RiveViewModel(fileName: "shapesGreen")
@@ -37,7 +38,7 @@ struct HomeView: View {
             .padding(20)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) {
-                    ForEach(viewModel.courses) { course in
+                    ForEach(courseViewModel.courses) { course in
                         VCard(course: course)
                             .onTapGesture {
                                 self.selectedCourse = course // Set the selected course when tapped
@@ -49,15 +50,17 @@ struct HomeView: View {
             }
             VStack {
                 Text("Articles")
-                    .customFont(.title3)
+                    .font(.title3)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 VStack(spacing: 20) {
-                    ForEach(courseSections) { section in
-                        HCard(section: section)
+                    ForEach(articleViewModel.articles) { article in
+                        HCard(article: article)
                     }
                 }
+
             }
             .padding(20)
+
         }
         .fullScreenCover(item: $selectedCourse) { course in
             VideoPlayerView(videoURLString: course.videoURL)

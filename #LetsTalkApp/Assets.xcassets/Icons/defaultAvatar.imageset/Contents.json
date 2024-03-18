@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "phoneIcon.svg",
+      "filename" : "defaultAvatar.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },

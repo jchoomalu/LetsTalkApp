@@ -4,3 +4,6 @@ xcuserdata
 *.xccheckout
 *.xcuserstate
 
+GoogleService-Info.plist
+/\#LetsTalkApp/GoogleService-Info.plist
+/#LetsTalkApp/GoogleService-Info.plist
