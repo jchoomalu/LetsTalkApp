@@ -9,13 +9,13 @@ import SwiftUI
 import RiveRuntime
 
 struct OnboardingView: View {
-    let button = RiveViewModel(fileName: "button")
+    let button = RiveViewModel(fileName: "green_btn")
     @State var showModal = false
     var body: some View {
         ZStack {
-            background
             content
                 .offset(y: showModal ? -80 : 0)
+                .background(Image("bgLight"))
             Color("Shadow")
                 .opacity(showModal ? 0.4 : 0)
                 .ignoresSafeArea()
@@ -44,24 +44,34 @@ struct OnboardingView: View {
     }
     
     var content: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Image("hope2")
+        VStack {
+            Spacer() // Adds a dynamic spacer that pushes content down
+            
+            Image("lt_ob1")
                 .resizable()
-                            .scaledToFit()
-                            .position(x: UIScreen.main.bounds.width / 2, y: 40)
-                            .frame(width: UIScreen.main.bounds.width, alignment: .leading)
-                            .zIndex(1)
-                            
-            Text("You are not alone. Find someone to call or text now. You have options, give us a chance.")
-                .customFont(.title)
-                .opacity(0.7)
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                .scaledToFit()
+                .frame(width: UIScreen.main.bounds.width) // Adjusts the width to match the screen width
+                .zIndex(1)
+            Rectangle().frame(height: 1).opacity(0.1).padding(.horizontal)
+            
             Spacer()
+            
             button.view()
+                .frame(height: 75)
                 .overlay(
                     Label("Let's Talk", systemImage: "bubble.left.and.bubble.right")
-                        .offset(x:4, y:4)
-                        .font(.custom("LilitaOne-Regular", size: 24))
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(.clear)
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.5), Color.green.opacity(0.5),
+                                                                       Color.blue.opacity(0.5)                             ]), startPoint: .leading, endPoint: .trailing)
+                        )
+                        .mask(
+                            Label("Let's Talk", systemImage: "bubble.left.and.bubble.right")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                        )
                 )
                 .background(
                     Color.black
@@ -73,24 +83,17 @@ struct OnboardingView: View {
                 .onTapGesture {
                     button.play(animationName: "active")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-                        withAnimation(.spring())  {
+                        withAnimation(.spring()) {
                             showModal = true
                         }
                     }
-                }.padding()
-         Spacer()
-        Spacer()
+                }
+                .padding(.bottom) // Adds padding at the bottom
+            
+            Spacer() // Ensures there's space at the very bottom
         }
-        .padding(20)
-        .padding(.top, 40)
+        .padding([.leading, .trailing, .top]) // Add padding to the leading, trailing, and top edges
     }
-    
-    var background: some View {
-        RiveViewModel(fileName: "shapesGreen").view()
-            .ignoresSafeArea()
-            .blur(radius: 50)
-    }
-    
 }
 
 #Preview {

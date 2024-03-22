@@ -17,9 +17,11 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
-            RiveViewModel(fileName: "shapesGreen")
+            RiveViewModel(fileName: "shapesLight")
                 .view()
-                .blur(radius: 30)
+                .blur(radius: 20)
+                .background(Image("bgLight"))
+                
             ScrollView {
                 content
             }

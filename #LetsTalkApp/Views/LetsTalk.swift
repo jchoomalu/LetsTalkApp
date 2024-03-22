@@ -12,7 +12,7 @@ struct LetsTalk: View {
                 .scaledToFill()
             Divider()
             Text("How would you like to talk?")
-                .customFont(.headline)
+                .customFont(.subheadline)
                 .foregroundColor(.secondary)
             HStack {
                 Image("phoneIcon")

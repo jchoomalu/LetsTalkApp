@@ -33,9 +33,11 @@ struct InfoView: View {
      }
      
      var background: some View {
-         RiveViewModel(fileName: "shapesGreen").view()
+         RiveViewModel(fileName: "shapesLight").view()
+             .blur(radius: 20)
+             .background(Image("bgLight"))
              .ignoresSafeArea()
-             .blur(radius: 50)
+             
      }
  }
 
