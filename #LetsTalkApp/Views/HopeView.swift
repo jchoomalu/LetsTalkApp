@@ -23,12 +23,9 @@ struct HopeView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                // Background image
                 Image("bgLight")
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
-                
-                // Rive animation view
                 RiveViewModel(fileName: "shapesLight")
                     .view()
                     .blur(radius: 20)
@@ -129,7 +126,7 @@ struct HopeView: View {
     }
     
     func addDocumentWithText(_ text: String) {
-        let effectiveNickname = nickname.isEmpty ? "youthFriend" : nickname
+        let effectiveNickname = nickname.isEmpty ? "ItGetsBetter24" : nickname
         let db = Firestore.firestore()
         db.collection("submissions").addDocument(data: [
             "text": text,
@@ -152,7 +149,7 @@ struct HopeView: View {
         @Binding var nickname: String
         @Binding var showingNicknameEntry: Bool
         @Binding var showingAvatarPicker: Bool
-        let button = RiveViewModel(fileName: "green_btn")
+        let button = RiveViewModel(fileName: "letstalkbtn")
         
         var body: some View {
             ZStack {
@@ -162,8 +159,7 @@ struct HopeView: View {
                     .edgesIgnoringSafeArea(.all)
 
                 VStack(alignment: .center, spacing: 20) {
-                    VStack(alignment: .center, spacing: 10) { // Center alignment for VStack
-                        // Display each word on a new line with a larger font
+                    VStack(alignment: .center, spacing: 10) {
                         ForEach(["Enter", "A", "Nickname"], id: \.self) { word in
                             Text(word)
                                 .font(.largeTitle)
@@ -180,7 +176,6 @@ struct HopeView: View {
                                 .shadow(color: Color.blue.opacity(0.3), radius: 5, x: 0, y: 5)
                         }
 
-                        // Custom styled TextField with white background
                         TextField("Nickname", text: $nickname)
                             .padding()
                             .background(Color.white) // Set the background color to white
@@ -188,17 +183,17 @@ struct HopeView: View {
                             .shadow(radius: 2) // Optional: Add a shadow for depth
                             .padding(.top, 50)
                             .padding(.bottom, 30)
-                            .padding(.horizontal)
+                            .frame(width: UIScreen.main.bounds.width * 0.8)
+                               .padding(.horizontal, UIScreen.main.bounds.width * 0.1)
                     }
-                    .frame(maxWidth: .infinity)
-                    button.view()
+                     button.view()
                         .frame(height: 65) 
                         .onTapGesture {
                             button.play(animationName: "active") // Play the animation
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                                 // Your action after the animation plays
                                 if nickname.isEmpty {
-                                    nickname = "youthFriend"
+                                    nickname = "ItGetsBetter24"
                                 }
                                 showingNicknameEntry = false
                                 showingAvatarPicker = true
@@ -209,7 +204,7 @@ struct HopeView: View {
                         .padding(.horizontal)
                 }
                 .padding()
-                .background(Image("bgLight").blur(radius: 10)) // Add blur for focus
+                .background(Image("bgLight").blur(radius: 10))
                 .cornerRadius(12)
                 .padding()
             }
@@ -230,6 +225,7 @@ struct HopeView: View {
         var body: some View {
             ZStack {
                 VStack(spacing: 20) {
+                    Spacer()
                     Text(nickname.isEmpty ? "youthFriend" : nickname)
                         .font(.title)
                     Text("Choose an avatar for your post")
@@ -277,10 +273,8 @@ struct HopeView: View {
                             .frame(height: 200)
                             .padding()
                             .keyboardType(.default)
-                        
                         Button("Submit", action: onCommit)
                             .padding()
-                        
                         Spacer()
                     }
                     .navigationBarItems(trailing: Button("Done") {

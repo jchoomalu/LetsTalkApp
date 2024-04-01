@@ -9,7 +9,7 @@ import SwiftUI
 import RiveRuntime
 struct ContentView: View {
     
-    @AppStorage("selectedTab") var selectedTab: SelectedMenu = .chat
+    @AppStorage("selectedTab") var selectedTab: SelectedTab = .chat
     @State var isOpen = false
     @State var show = false
     @State private var refreshToggle: Bool = false
@@ -34,6 +34,8 @@ struct ContentView: View {
                     HomeView()
                 case .timer:
                     InfoView()
+                case .map:
+                    Map()
                 case .user:
                     HopeView()
                 }

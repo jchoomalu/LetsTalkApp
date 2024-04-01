@@ -9,13 +9,20 @@ import SwiftUI
 import RiveRuntime
 
 struct OnboardingView: View {
-    let button = RiveViewModel(fileName: "green_btn")
+    let button = RiveViewModel(fileName: "letstalkbtn")
     @State var showModal = false
+    
+    
     var body: some View {
         ZStack {
             content
                 .offset(y: showModal ? -80 : 0)
-                .background(Image("bgLight"))
+                .background(
+                    Image("bgLight")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all) 
+                )
             Color("Shadow")
                 .opacity(showModal ? 0.4 : 0)
                 .ignoresSafeArea()
@@ -45,12 +52,13 @@ struct OnboardingView: View {
     
     var content: some View {
         VStack {
-            Spacer() // Adds a dynamic spacer that pushes content down
             
-            Image("lt_ob1")
+            Spacer()
+            
+            Image("letsTalk")
                 .resizable()
                 .scaledToFit()
-                .frame(width: UIScreen.main.bounds.width) // Adjusts the width to match the screen width
+                .frame(width: UIScreen.main.bounds.width)
                 .zIndex(1)
             Rectangle().frame(height: 1).opacity(0.1).padding(.horizontal)
             
@@ -59,27 +67,18 @@ struct OnboardingView: View {
             button.view()
                 .frame(height: 75)
                 .overlay(
-                    Label("Let's Talk", systemImage: "bubble.left.and.bubble.right")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.clear)
-                        .background(
-                            LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.5), Color.green.opacity(0.5),
-                                                                       Color.blue.opacity(0.5)                             ]), startPoint: .leading, endPoint: .trailing)
-                        )
-                        .mask(
-                            Label("Let's Talk", systemImage: "bubble.left.and.bubble.right")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                        )
+                    Label {
+                        
+                        Text("Let's Talk")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .padding(.leading, 35)
+                    } icon: {
+                        // Adjust the icon size to match your text if needed
+                    }
+                    .foregroundColor(.darkBlue)
                 )
-                .background(
-                    Color.black
-                        .cornerRadius(30)
-                        .blur(radius: 30)
-                        .opacity(0.2)
-                        .offset(y: 10)
-                )
+                
                 .onTapGesture {
                     button.play(animationName: "active")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
@@ -88,11 +87,11 @@ struct OnboardingView: View {
                         }
                     }
                 }
-                .padding(.bottom) // Adds padding at the bottom
+                .padding(.bottom)
             
-            Spacer() // Ensures there's space at the very bottom
+            Spacer()
         }
-        .padding([.leading, .trailing, .top]) // Add padding to the leading, trailing, and top edges
+        .padding([.leading, .trailing, .top])
     }
 }
 

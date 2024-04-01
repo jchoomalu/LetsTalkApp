@@ -85,8 +85,7 @@ struct InfoCardView: View {
                     .ignoresSafeArea()
                     .blur(radius: 30)
                     .background(
-                        Image("Spline")
-                            .blur(radius: 50)
+                        Image("bgLight")
                             .offset(x: -65, y: -85)
                     )
                 
@@ -113,7 +112,6 @@ struct ResourceInfo: Identifiable, Equatable {
     var id = UUID()
     var title: String
     var caption: String
-    var color: Color
     var image: Image
 
     static func == (lhs: ResourceInfo, rhs: ResourceInfo) -> Bool {

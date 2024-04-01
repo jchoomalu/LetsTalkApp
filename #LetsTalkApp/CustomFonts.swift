@@ -106,3 +106,8 @@ enum TextStyle {
     case caption
     case caption2
 }
+
+//  Dark Blue Font 
+extension Color {
+    static let darkBlue = Color(red: 0/255, green: 0/255, blue: 139/255)
+}

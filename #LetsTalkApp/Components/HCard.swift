@@ -1,45 +1,92 @@
-//
-//  VCard.swift
-//  #LetsTalkApp
-//
-//  Created by Jason Hoomalu on 3/9/24.
-//
-
 import SwiftUI
+import SafariServices
 
 struct HCard: View {
-    var article: Article // Corrected to use ':' for type declaration
-    
-    private var articleColor: Color {
-        switch article.color.lowercased() {
-        case "blue": return .blue
-        case "red": return .red
-        case "purple": return .purple
-        // Add more cases as needed
-        default: return .gray // Default color
+    struct SafariView: UIViewControllerRepresentable {
+        let url: URL
+
+        func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
+            return SFSafariViewController(url: url)
+        }
+
+        func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SafariView>) {
+            // No need to update the view controller in this use case.
         }
     }
-    
+
+    var article: Article
+    @State private var isExpanded = false
+    @State private var isExpandable = false
+    @State private var showingSafariView = false
+
+    private let characterLimitForTwoLines: Int = 100 // Adjust based on your font and layout
 
     var body: some View {
-        HStack(spacing: 20) {
-            VStack(alignment: .leading, spacing: 8) {
-                Text(article.title)
-                    .font(.title2) // Use .font instead of .customFont unless you have a custom modifier
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                Text(article.caption)
-                    .font(.body) // Use .font instead of .customFont unless you have a custom modifier
+        VStack {
+            ZStack(alignment: .topTrailing) {
+                HStack(spacing: 20) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(article.title)
+                            .font(.title2)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(article.caption)
+                                .font(.body)
+                                .foregroundColor(.white)
+                                .lineLimit(isExpanded ? nil : 2)
+                                .onAppear {
+                                    // Determine if the text is expandable
+                                    self.isExpandable = article.caption.count > characterLimitForTwoLines
+                                }
+                            
+                            if isExpandable {
+                                Button(action: {
+                                    withAnimation {
+                                        self.isExpanded.toggle()
+                                    }
+                                }) {
+                                    HStack {
+                                        Text(isExpanded ? "Read Less" : "Read More")
+                                            .foregroundColor(.blue)
+                                        Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                                            .foregroundColor(.blue)
+                                    }
+                                    .font(.caption)
+                                }
+                            }
+                        }
+                    }
+                    Spacer() // Keeps the text aligned to the left
+                }
+                .padding(30)
+                
+                // Image positioned absolutely in the top right
+                Image("afy1")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+                    .padding(.trailing, 20) // Right padding inside the ZStack
+                    .padding(.top, 20) // Top padding inside the ZStack
+                
             }
-            Divider()
-            Image(article.image) // Assuming the image is stored in your assets
-                .resizable() // Make sure to make the image resizable
-                .scaledToFit()
-                .frame(width: 100, height: 100) // Adjust size as necessary
+            .frame(maxWidth: .infinity)
+            .background(
+                Image("hCard")
+                    .resizable()
+                    .scaledToFill()
+            )
+            .cornerRadius(30)
         }
-        .padding(30)
-        .frame(maxWidth: .infinity, maxHeight: 110)
-        .background(Color(articleColor))
-        .cornerRadius(30) // Use .cornerRadius for rounding corners
+        .padding(.horizontal)
+        .onTapGesture {
+            self.showingSafariView = true
+        }
+        .sheet(isPresented: $showingSafariView) {
+            if let url = URL(string: article.articleURL) {
+                SafariView(url: url)
+            }
+        }
     }
 }
-

@@ -56,7 +56,7 @@ struct LetsTalk: View {
         }
         .padding(30)
         .background(
-            Image("bgWhite") // Use your "bgWhite" image as the background
+            Image("bgLight") // Use your "bgWhite" image as the background
                 .resizable()
                 .scaledToFill()
         )

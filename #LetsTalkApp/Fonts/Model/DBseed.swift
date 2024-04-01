@@ -14,7 +14,6 @@ struct Info: Codable, Identifiable {
     @DocumentID var id: String? // Use @DocumentID for the document ID
     var title: String
     var caption: String
-    var color: String // Store color as a string
     var image: String // Store image as a string
 }
 
@@ -24,7 +23,6 @@ struct Course: Codable, Identifiable {
     var title: String
     var subtitle: String
     var caption: String
-    var color: String
     var image: String
     var videoURL: String
 }
@@ -33,8 +31,6 @@ struct Article: Codable, Identifiable {
     @DocumentID var id: String?
     var title: String
     var caption: String
-    var color: String
-    var image: String
     var articleURL: String
 }
 
@@ -154,4 +150,13 @@ class FirestoreSubmissionsModel: ObservableObject {
             }
         }
     }
+}
+
+
+enum SelectedTab: String {
+    case chat
+    case home
+    case timer
+    case map
+    case user
 }

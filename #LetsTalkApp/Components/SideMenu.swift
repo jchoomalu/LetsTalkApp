@@ -9,8 +9,7 @@ import RiveRuntime
 
 struct SideMenu: View {
     
-    @AppStorage("selectedMenu") var selectedMenu: SelectedMenu = .chat
-    @AppStorage("selectedTab") var selectedTab: SelectedMenu = .chat
+    @AppStorage("selectedTab") var selectedTab: SelectedTab = .chat
     @Binding var isOpen: Bool
     
     var active = false
@@ -65,13 +64,12 @@ struct SideMenu: View {
                 .background(
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
                         .fill(.blue)
-                        .frame(maxWidth: selectedMenu == item.menu ? .infinity : 0)
+                        .frame(maxWidth: selectedTab == item.menu ? .infinity : 0)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 )
                 .background(Color("Background 2"))
                 .onTapGesture {
-                    selectedMenu = item.menu // Mark the item as selected immediately
-                    selectedTab = item.menu
+                    selectedTab = item.menu // Mark the item as selected immediately
                     // Delay the closure execution for changing the isOpen state
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { // 0.2 seconds delay
                         withAnimation(.spring()) {
@@ -95,24 +93,16 @@ struct MenuItem: Identifiable {
     var id = UUID()
     var text: String
     var icon: RiveViewModel
-    var menu: SelectedMenu
+    var menu: SelectedTab
     var view: AnyView // Change 'any View' to 'AnyView'
 }
 
 var menuItems: [MenuItem] = [
     MenuItem(text: "Let's Talk", icon: RiveViewModel(fileName: "icons", stateMachineName: "CHAT_Interactivity", artboardName: "CHAT"), menu: .chat, view: AnyView(LetsTalk())), // Use AnyView to wrap the view
     MenuItem(text: "Resources", icon: RiveViewModel(fileName: "icons", stateMachineName: "HOME_interactivity", artboardName: "HOME"), menu: .home, view: AnyView(HomeView())), // Use AnyView to wrap the view
-    MenuItem(text: "When To Act", icon: RiveViewModel(fileName: "icons", stateMachineName: "TIMER_Interactivity", artboardName: "TIMER"), menu: .timer, view: AnyView(InfoView())), // Use AnyView to wrap the view
-    MenuItem(text: "Hope", icon: RiveViewModel(fileName: "icons", stateMachineName: "USER_Interactivity", artboardName: "USER"), menu: .user, view: AnyView(Text("Hope"))) // Example using Text as a placeholder
+    MenuItem(text: "When To Act", icon: RiveViewModel(fileName: "icons", stateMachineName: "TIMER_Interactivity", artboardName: "TIMER"), menu: .timer, view: AnyView(InfoView())),
+    MenuItem(text: "Safe Spaces", icon: RiveViewModel(fileName: "icons", stateMachineName: "SEARCH_Interactivity", artboardName: "SEARCH"), menu: .map, view: AnyView(Map())),
+    MenuItem(text: "Hope", icon: RiveViewModel(fileName: "icons", stateMachineName: "USER_Interactivity", artboardName: "USER"), menu: .user, view: AnyView(Text("Hope")))
 ]
 
 
-
-
-
-enum SelectedMenu: String {
-    case home
-    case timer
-    case user
-    case chat
-}
